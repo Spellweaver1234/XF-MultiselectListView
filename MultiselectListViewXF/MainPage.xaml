@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MultiselectListViewXF.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <ListView
+        Margin="20"
+        ItemsSource="{Binding DataSource}">
+        <ListView.Header>
+            <Button
+                Command="{Binding SelectCommand}"
+                Text="Edit" />
+        </ListView.Header>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout
+                        Margin="0,0,0,20"
+                        VerticalOptions="CenterAndExpand">
+                        <Label Text="{Binding Data.Name}" />
+                        <Label
+                            FontSize="10"
+                            Text="{Binding Data.Description}" />
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+</ContentPage>
